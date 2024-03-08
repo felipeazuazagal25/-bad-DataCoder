@@ -1,0 +1,76 @@
+
+{% extends 'layouts/base.html' %}
+
+{% block title %} Upload Files for Grading {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-3">
+            Grading
+          </div>
+        </div>
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+
+            {% if msg %}
+              <p>{{ msg }}</p>
+            {% else %}
+              <p>
+                Upload Files
+              </p>
+            {% endif %}  
+
+          </div>
+          
+          {% if correct %}
+            <p>all data was processed</p>
+            <a href="{% url 'download_excel' %}" download="downloaded_data.xlsx">Download</a>
+          {% else %}
+          <form method="POST" enctype="multipart/form-data" >
+            {% csrf_token %}
+            <div class="form-group mb-3">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                {{ form.test }}
+              </div>
+            </div>
+            <div>Rubric</div> <br>
+            <div class="form-group mb-3">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                {{ form.rubric }}
+              </div>
+            </div>
+            <div>Zip File</div> <br>
+            <div class="form-group mb-3">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                {{ form.zip_file }}
+              </div>
+            </div>
+            
+
+
+            <div class="text-center">
+              <input type="submit" value = 'Submit' class="btn btn-primary my-4"></input>
+            </div>
+          </form>
+          {% endif %}
+          </div>
+          </div>
+
+{% endblock %}
+
+{% block javascripts %}{% endblock javascripts %}
+
+

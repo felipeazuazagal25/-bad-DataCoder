@@ -1,0 +1,119 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Courses {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-3">
+            This is a list of all test questions
+          </div>
+        </div>
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+
+            {% if msg %}
+              <p>{{ msg }}</p>
+            {% else %}
+              <p>
+                This is a list of Questions
+              </p>
+            {% endif %}  
+
+            </div>
+
+            <div class="container-fluid mt--7">
+
+              <div class="row">
+                <div class="col">
+                  <div class="card shadow">
+                    <div class="card-header bg-transparent">
+                      <h3 class="mb-0">Tests</h3>
+                    </div>
+                        {% if result%}
+                          {% for number,versiones in result.items %}
+                          <div class="card-body">
+                            <h2> Pregunta {{number}} </h2>
+                              <div class="row icon-examples">
+                                {% for version, texto in versiones.items %}
+                                  <div class="col-lg-3 col-md-6">
+                                      <div class="card-button">
+                                        <h4> Version {{version}} </h4>
+                                        <p> {{texto}} </p>
+                                      </div>
+                                </div>
+                                {% endfor %}
+                              </br>
+                              {% endfor %}
+                        {% else %}
+                          <p> No questions to show</p>
+                        {% endif %}
+                      </div>
+                      
+                      
+                      
+                      <br>
+                      <br>
+                      <div class="col-xl-3 col-lg-6">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col">
+                                <span class="h2 font-weight-bold mb-0">
+                                  <a href= {% url 'core:send_email' slug%}>Send Email</a>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      
+                      <a href="{% url 'core:delete_test' slug %}" class = "text-danger">Delete Test</a>
+                      <br>
+
+                      <a href="{% url 'core:course_creation' %}">Create Course</a>
+                      <br>
+                      <a href="{% url 'core:test_creation' %}">Create Test Question</a>
+                      <br>
+                      <a href="{% url 'core:student_creation' %}">Create Student</a>
+                      <br>
+                      <div class="col-xl-3 col-lg-6">
+                        <div class="card card-stats mb-4 mb-xl-0">
+                          <div class="card-body">
+                            <div class="row">
+                              <div class="col">
+                                <span class="h2 font-weight-bold mb-0">
+                                  <a href={% url 'core:tests_view' %}>View Tests</a>
+                                </span>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                      <br>
+                      </div>
+                      </div>
+
+                    </div>
+                  </div>
+                </div>
+              </div>
+        
+              {% include "includes/footer.html" %}
+        
+            </div>
+            
+            
+
+          
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock javascripts %}
+
+

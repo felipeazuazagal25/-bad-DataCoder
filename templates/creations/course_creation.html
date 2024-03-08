@@ -1,0 +1,55 @@
+
+{% extends 'layouts/base.html' %}
+
+{% block title %} Create a Course {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-3">
+            Course Creation
+          </div>
+        </div>
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+
+            {% if msg %}
+              <p>{{ msg }}</p>
+            {% else %}
+              <p>
+                Fill out the requested information
+              </p>
+            {% endif %}  
+
+          </div>
+
+          <form method="POST">
+            {% csrf_token %}
+            <div class="form-group mb-3">
+              <div class="input-group input-group-alternative">
+                <div class="input-group-prepend">
+                  <span class="input-group-text"><i class="ni ni-hat-3"></i></span>
+                </div>
+                {{ form }}
+              </div>
+            </div>
+
+            <div class="text-center">
+              <input type="submit" value = 'Submit' class="btn btn-primary my-4"></input>
+            </div>
+          </form>
+
+
+
+          </div>
+          </div>
+          
+
+{% endblock %}
+
+{% block javascripts %}{% endblock javascripts %}
+
+

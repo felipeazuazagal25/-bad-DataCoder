@@ -1,0 +1,77 @@
+<nav class="sidenav navbar navbar-vertical  fixed-left  navbar-expand-xs navbar-light bg-white" id="sidenav-main">
+  <div class="scrollbar-inner">
+    <!-- Brand -->
+    <div class="sidenav-header  align-items-center">
+      <a class="navbar-brand" href="/core/demo_contenidos">
+        <h1>DataCoder<h1>
+      </a>
+    </div>
+    <div class="navbar-inner">
+      <!-- Collapse -->
+      <div class="collapse navbar-collapse" id="sidenav-collapse-main">
+        <!-- Nav items -->
+        <ul class="navbar-nav">
+          {% if request.user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link {% if 'index' in segment %} active {% endif %}" href="/views/demo_contenidos.html">
+              <i class="ni ni-tv-2 text-primary"></i>
+              <span class="nav-link-text">Dashboard</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'icons' in segment %} active {% endif %}" href="/home/icons.html">
+              <i class="ni ni-planet text-orange"></i>
+              <span class="nav-link-text">Icons</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'profile' in segment %} active {% endif %}" href="/home/profile.html">
+              <i class="ni ni-single-02 text-yellow"></i>
+              <span class="nav-link-text">Profile</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'tables' in segment %} active {% endif %}" href="/home/tables.html">
+              <i class="ni ni-bullet-list-67 text-default"></i>
+              <span class="nav-link-text">Tables</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'upload' in segment %} active {% endif %}" href="/home/upload_files.html">
+              <i class="ni ni-cloud-upload-96 text-default"></i>
+              <span class="nav-link-text">Upload Files</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'courses' in segment %} active {% endif %}" href="/core/courses">
+              <i class="ni ni-hat-3 text-default"></i>
+              <span class="nav-link-text">Courses</span>
+            </a>
+          </li>
+          {% endif %}
+          <li class="nav-item">
+            <a class="nav-link {% if 'index' in segment %} active {% endif %}" href="/core/demo_contenidos">
+              <i class="ni ni-tv-2 text-primary"></i>
+              <span class="nav-link-text">Contenidos</span>
+            </a>
+          </li>
+          {% if request.user.is_superuser %}
+          <li class="nav-item">
+            <a class="nav-link {% if 'index' in segment %} active {% endif %}" href="/core/tests_student">
+              <i class="ni ni-tv-2 text-primary"></i>
+              <span class="nav-link-text">Pruebas Rendidas</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link {% if 'test' in segment %} active {% endif %}" href="/core/generate_test/Test1">
+              <i class="ni ni-hat-3 text-default"></i>
+              <span class="nav-link-text">Generate Test</span>
+            </a>
+          </li>
+          {% endif %}           
+        </ul>
+        </ul>
+      </div>
+    </div>
+  </div>
+</nav>

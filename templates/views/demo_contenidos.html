@@ -1,0 +1,95 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Courses {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-3">
+            
+          </div>
+        </div>
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+
+            {% if msg %}
+              <p>{{ msg }}</p>
+            {% else %}
+              <p>
+                
+              </p>
+            {% endif %}  
+
+            </div>
+            
+        
+          <div class="container-fluid mt--7">
+
+            <div class="row">
+              <div class="col">
+                <div class="card shadow">
+                  <div class="card-header bg-transparent">
+                    <h3 class="mb-0">Hola de nuevo! 👋</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="row icon-examples">
+                          <div class="col-lg-3 col-md-6">
+                              <a href = "/home/contenidos_1.html">
+                                <div class="card-button">
+                                  <h2>R y RStudio</h2>
+                                  <div class = "text-muted">(Versión Demo)</div>
+                                  <ul style = 'list-style-type:none; padding:0;'>
+                                    <li>Cantidad de Videos: <strong>3</strong>
+                                    <li>Tiempo total: <strong>28 minutos</strong>
+                                    <hr>
+                                    <li>Fecha de Inicio: <strong>-</strong>
+                                    <li>Fecha Limite: <strong>-</strong>
+                                  </ul>
+                                </div>
+                              </a>
+                          </div>
+                          <div class="col-lg-3 col-md-6">
+                            <a>
+                              <div class="card-button">
+                                <h2 class = "text-muted">Restringido</h2>
+                                <div class = "text-muted">(Versión Demo)</div>
+                                <ul style = 'list-style-type:none; padding:0;'>
+                                  <li>
+                                  <li>
+                                  <hr>
+                                  <li>
+                                  <li>
+                                </ul>
+                              </div>
+                            </a>
+                        </div>
+                    </div>
+                    
+
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            {% include "includes/footer.html" %}
+      
+          </div>
+
+
+
+        </div>
+      </div>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock javascripts %}
+
+

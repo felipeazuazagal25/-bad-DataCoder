@@ -1,0 +1,87 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Courses {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-3">
+            
+          </div>
+        </div>
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+
+            {% if msg %}
+              <p>{{ msg }}</p>
+            {% else %}
+              <p>
+                This is a list of Questions
+              </p>
+            {% endif %}  
+
+            </div>
+            
+        
+          <div class="container-fluid mt--7">
+
+            <div class="row">
+              <div class="col">
+                <div class="card shadow">
+                  <div class="card-header bg-transparent">
+                    <h3 class="mb-0">Tests</h3>
+                  </div>
+                  <div class="card-body">
+                    <div class="row icon-examples">
+                      {% if result %}
+                        {% for test, info_test in result.items %}
+                          <div class="col-lg-3 col-md-6">
+                              <a href = {% url 'core:generate_test' test%}>
+                                <div class="card-button">
+                                  <h2>{{test}}</h2>
+                                  <ul style = 'list-style-type:none; padding:0;'>
+                                    <li>Cantidad de preguntas: <strong>{{info_test.num_questions}}</strong>
+                                    <li>Fecha Límite: <strong>{{info_test.lim_date}} - {{info_test.lim_time}}</strong>
+                                    <hr>
+                                    <li>Fecha Rendición: <strong>{{info_test.take_date}}</strong>
+                                    <li>Estado: <strong>{{info_test.status}}</strong>
+                                    <hr>
+                                    <li>Nota: <strong>{{info_test.grade}}</strong>
+                                  </ul>
+                                </div>
+                              </a>
+                          </div>
+                        {% endfor %}
+                      {% else %}
+                        <p> No tienes pruebas por hacer.</p>
+                      {% endif %}
+                    </div>
+                    
+
+                  </div>
+                </div>
+              </div>
+            </div>
+      
+            {% include "includes/footer.html" %}
+      
+          </div>
+
+
+
+        </div>
+          </div>
+
+
+
+
+{% endblock %}
+
+{% block javascripts %}
+
+{% endblock javascripts %}
+
+

@@ -1,0 +1,85 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Upload Files for Grading {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="card bg-secondary shadow border-0">
+  <div class="card-header bg-transparent pb-5">
+    <div class="text-muted text-center mt-2 mb-3">
+      
+    </div>
+  </div>
+  <div class="card-body px-lg-5 py-lg-5">
+    <div class="text-center text-muted mb-4">
+
+      {% if msg %}
+        <p>{{ msg }}</p>
+      {% else %}
+        <p>
+          
+        </p>
+      {% endif %}  
+
+      </div>
+      
+  
+    <div class="container-fluid mt--7">
+
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header bg-transparent">
+              <h3 class="mb-0"><strong>DEMO</strong> - Módulo 1: <em>Comandos en R</em></h3>
+            </div>
+            <div class="card-body">
+              <div style="text-align:center;">
+                <div style = "max-width:800">
+                  <iframe width="800" height="450" src="https://www.youtube.com/embed/676O5ivfyCc?si=o2qSf8WAYp3299ou&rel=0 " title="Comandos en R" frameborder="0" allow="accelerometer; clipboard-write; encrypted-media;" allowfullscreen></iframe>
+                  <hr>
+                  <div style="padding:5%;text-align:left;">
+                    <h2>Material</h2>
+                    <ul>
+                      <li><a href="https://alumnosuaicl-my.sharepoint.com/:u:/g/personal/par_uai_cl/EflWYNWhtjtDu1lc01RYYBgBK9j76-x0DpoDRFee6nwq4A?e=03aKWU&download=1">Test.R</a>
+                    </ul>
+                    <hr>
+                    <h2>Transcrito</h2>
+                    <div markdown = 1>
+                      <p class="has-line-data" data-line-start="0" data-line-end="1">Bienvenidos y Bienvenidas a la Plataforma de Aprendizaje de R, PAR. En esta ocasión estaremos revisando cómo funcionan los comandos en R.</p>
+                      <p class="has-line-data" data-line-start="2" data-line-end="3">La forma que tenemos de comunicarnos con R es a través de comandos. Estos nos permiten decirle a R qué queremos hacer. Por ejemplo, si necesitamos obtener el resultado de la siguiente operación:  $(5\cdot17+59)^2$, tendríamos que escribir en R <code>(5*17+59)^2</code>, luego ejecutamos el código, es decir, le pedimos a R el resultado de esa operación. R realiza el cálculo y nos entrega el resultado o salida, en este caso <code>20736</code>.</p>
+                      <p class="has-line-data" data-line-start="4" data-line-end="5">R también puede calcular otro tipo de operaciones, como el <em>sen(0).</em> En este caso debemos ocupar la función <code>sin()</code> de R, el código a utilizar sería <code>sin(0)</code> y el resultado es <code>0</code>. En el caso que no recordemos cómo utilizar una función, o qué significa dicha función, podemos pedir ayuda de dos formas: una usando la función <code>help()</code> y otra usando el signo de pregunta <code>?</code> antes del nombre de la función. Para saber qué hace la función <code>sin()</code> podríamos usar <code>help(sin)</code> (sin paréntesis) o <code>?sin()</code>. Otra forma de buscar ayuda es dirigirse a la venta de <code>Help</code>, ubicada en el cuadro inferior derecho, ahí se puede buscar la función que necesitamos.</p>
+                      <p class="has-line-data" data-line-start="6" data-line-end="7">R también permite comentar código, es decir, dejar pequeñas notas que no son ejecutables. Estas se usan normalmente para ordenar y explicar el código escrito. Para usarlas se tiene que usar el caracter <code>#</code>.</p>
+                      <p class="has-line-data" data-line-start="8" data-line-end="9">Por último, R detecta errores de sintaxis. Si hay frases no comentadas, paréntesis abiertos, comas mal colocadas o faltantes, entre otras cosas, R detectará que está mal escrito y lo señalará con una <code>cruz</code>. R no puede detectar todos los errores inmediatamente, pero sí los más evidentes.</p>
+                      <p class="has-line-data" data-line-start="10" data-line-end="11">Veamos ahora cómo usar los comandos en R.</p>
+                    </div>
+                    <div style='text-align:center'>
+                      <button class="btn btn-secondary my-4">Antes</button> 
+                      <button class="btn btn-primary my-4" onclick="window.location.href='/home/contenidos_2.html';">Siguiente</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include "includes/footer.html" %}
+
+    </div>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+  <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+
+{% endblock javascripts %}

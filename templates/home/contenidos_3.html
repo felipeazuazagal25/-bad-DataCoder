@@ -1,0 +1,88 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Upload Files for Grading {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+<div class="card bg-secondary shadow border-0">
+  <div class="card-header bg-transparent pb-5">
+    <div class="text-muted text-center mt-2 mb-3">
+      
+    </div>
+  </div>
+  <div class="card-body px-lg-5 py-lg-5">
+    <div class="text-center text-muted mb-4">
+
+      {% if msg %}
+        <p>{{ msg }}</p>
+      {% else %}
+        <p>
+          
+        </p>
+      {% endif %}  
+
+      </div>
+      
+  
+    <div class="container-fluid mt--7">
+
+      <div class="row">
+        <div class="col">
+          <div class="card shadow">
+            <div class="card-header bg-transparent">
+              <h3 class="mb-0"><strong>DEMO</strong> - Módulo 3: <em>Algunas funciones básicas</em></h3>
+            </div>
+            <div class="card-body">
+              <div style="text-align:center;">
+                <div style = "max-width:800">
+                  <iframe width="800" height="450" src="https://www.youtube.com/embed/agboUy9XEEQ?si=fS19KRlRwLPeM7T6&rel=0 " title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+                  <hr>
+                  <div style="padding:10%;text-align:left;">
+                    <h2>Material</h2>
+                    <ul>
+                      <li><a href="https://alumnosuaicl-my.sharepoint.com/:u:/g/personal/par_uai_cl/ER7z6zc95SpFk0HKXlmsM1wBD_Pefh1ofuchtaPOKUA9BA?e=eqDdAD&download=1">R1.3. Algunas funciones básicas.R</a>
+                    </ul>
+                    <hr>
+                    <h2>Transcrito</h2>
+                    <div markdown = 1>
+                      <p class="has-line-data" data-line-start="0" data-line-end="1">Bienvenidos y Bienvenidas a la Plataforma de Aprendizaje de R, PAR. En esta ocasión veremos algunas funciones básicas en R.</p>
+                      <p class="has-line-data" data-line-start="2" data-line-end="3">R permite hacer operaciones matemáticas más complejas. Esto lo consigue a través de funciones. Las funciones en R se llaman por un nombre en especifico, por ejemplo, si queremos calcular el $sen(1.3)$, usamos la función <code>sin()</code> que R tiene. A esta función necestamos entregarle los parámetros correspondientes. En este caso, la función es sencilla, por lo que sólo debemos entregarle un número a la función. Esto resulta en el comando <code>sin(1.3)</code>. La salida de R nos entrega 
+                      <br>
+                      <code>[1] 0.9635582</code>
+                      <br>
+                      indicando que ese es el valor buscado. Funciones en R hay muchas, por lo que señalaremos, por el momento, las funciones importantes.</p>
+                      <p class="has-line-data" data-line-start="4" data-line-end="5">Veamos ahora cómo se usan estas funciones en R.</p>
+                    </div>
+
+                    <div style='text-align:center'>
+                      <button class="btn btn-primary my-4" onclick="window.location.href='/home/contenidos_2.html';">Antes</button> 
+                      <button class="btn btn-secondary my-4" onclick="window.location.href='{% url 'core:demo_contenidos' %}';">Terminar</button>
+                    </div>
+
+                  </div>
+                </div>
+              </div>              
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {% include "includes/footer.html" %}
+
+    </div>
+
+
+
+  </div>
+</div>
+
+{% endblock %}
+
+{% block javascripts %}
+
+  <script src="/static/assets/vendor/chart.js/dist/Chart.min.js"></script>
+  <script src="/static/assets/vendor/chart.js/dist/Chart.extension.js"></script>
+
+{% endblock javascripts %}

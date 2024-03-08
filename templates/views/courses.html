@@ -1,0 +1,64 @@
+{% extends 'layouts/base.html' %}
+
+{% block title %} Courses {% endblock title %}
+
+{% block stylesheets %}{% endblock stylesheets %}
+
+{% block content %}
+
+      <div class="card bg-secondary shadow border-0">
+        <div class="card-header bg-transparent pb-5">
+          <div class="text-muted text-center mt-2 mb-3">
+            This is a list of Courses
+          </div>
+        </div>
+        <div class="card-body px-lg-5 py-lg-5">
+          <div class="text-center text-muted mb-4">
+
+            {% if msg %}
+              <p>{{ msg }}</p>
+            {% else %}
+              <p>
+                This is a list of Courses
+              </p>
+            {% endif %}  
+
+            </div>
+            <ul>
+                {% for course in courses%}
+                <li>{{course.shortname}} </li>    
+                {% endfor %}    
+            </ul>
+          <a href="{% url 'core:course_creation' %}">Create Course</a>
+          <br>
+          <a href="{% url 'core:test_creation' %}">Create Test</a>
+          <br>
+          <a href="{% url 'core:student_creation' %}">Create Student</a>
+          <br>
+          <div class="col-xl-3 col-lg-6">
+            <div class="card card-stats mb-4 mb-xl-0">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col">
+                    <span class="h2 font-weight-bold mb-0">
+                      <a href={% url 'core:tests_view' %}>View Tests</a>
+                    </span>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <br>
+
+          </div>
+          </div>
+
+
+          
+
+
+{% endblock %}
+
+{% block javascripts %}{% endblock javascripts %}
+
+
